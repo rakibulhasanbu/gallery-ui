@@ -1,5 +1,13 @@
+import Home from "./pages/Home";
+import Navbar from "./shared/Navbar";
+
 const App = () => {
-  return <div className="">App</div>;
+  return (
+    <>
+      <Navbar />
+      <Home />
+    </>
+  );
 };
 
 export default App;
