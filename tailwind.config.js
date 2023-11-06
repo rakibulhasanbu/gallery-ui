@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 const { nextui } = require("@nextui-org/theme");
 export default {

@@ -68,16 +68,17 @@ const ImageItem = forwardRef(
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           className={`relative hidden md:flex ${
-            selected ? "border-2 border-sky-600" : ""
+            selected ? "border border-zinc-300" : ""
           }`}
         >
-          <img className="rounded-[10px]" src={id} alt="" />
+          <img className="rounded-md" src={id} alt="" />
 
           <Checkbox
+            radius="sm"
             isSelected={selected}
             name={id}
             id={id}
-            className={`absolute top-2 left-2 ${
+            className={`absolute top-2 left-2 z-50 ${
               selected ? "selectedImg" : ""
             } ${hovered ? "" : "md:hidden"}`}
             onValueChange={handleDeletedImages}
@@ -85,9 +86,7 @@ const ImageItem = forwardRef(
 
           {hovered && (
             <div
-              className={`absolute ${
-                index === 0 ? "hidden" : ""
-              } rounded-[10px] inset-0 bg-black bg-opacity-50 pointer-events-none z-10`}
+              className={`absolute rounded-md inset-0 bg-black bg-opacity-50 pointer-events-none`}
             ></div>
           )}
         </div>

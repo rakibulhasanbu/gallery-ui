@@ -80,7 +80,7 @@ const Home = () => {
                   id={id}
                 />
               ))}
-              <div className="w-[144px] flex flex-col gap-2 rounded-[10px] cursor-pointer border-2 border-dashed border-slate-300 justify-center items-center h-[144px] bg-slate-100">
+              <div className="w-[144px] flex flex-col gap-2 rounded-md cursor-pointer border-2 border-dashed border-slate-300 justify-center items-center h-[144px] bg-slate-100">
                 <img
                   className="w-8 h-8"
                   src={
