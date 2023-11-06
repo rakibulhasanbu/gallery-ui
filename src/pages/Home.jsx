@@ -12,21 +12,20 @@ import {
   arrayMove,
   rectSortingStrategy,
 } from "@dnd-kit/sortable";
-import { useCallback, useState } from "react";
+import { useCallback, useContext } from "react";
 import SortableItem from "../components/SortableItem";
 import ImageItem from "../components/ImageItem";
+import { Context } from "../context/AppContext";
 
 const Home = () => {
-  const images = [
-    "https://res.cloudinary.com/dsb7txoad/image/upload/v1699105076/website%20assets/gellry-ui/gallery_klw4qh.png",
-    "https://res.cloudinary.com/dsb7txoad/image/upload/v1699282427/website%20assets/gellry-ui/image_ivhrn4.png",
-    "https://res.cloudinary.com/dsb7txoad/image/upload/v1699105076/website%20assets/gellry-ui/gallery_klw4qh.png",
-    "https://res.cloudinary.com/dsb7txoad/image/upload/v1699105076/website%20assets/gellry-ui/gallery_klw4qh.png",
-    "https://res.cloudinary.com/dsb7txoad/image/upload/v1699105076/website%20assets/gellry-ui/gallery_klw4qh.png",
-  ];
-  const [items, setItems] = useState(images);
-  const [activeItem, setActiveItem] = useState(null);
-  const [deleteItem, setDeleteItem] = useState([]);
+  const {
+    items,
+    setItems,
+    deleteItem,
+    setDeleteItem,
+    activeItem,
+    setActiveItem,
+  } = useContext(Context);
 
   const handleDragStart = useCallback((event) => {
     setActiveItem(event.active.id);
@@ -95,7 +94,7 @@ const Home = () => {
           ) : (
             <div>
               {" "}
-              <h2 className="text-5xl font-bold uppercase my-40 text-center">
+              <h2 className="text-5xl font-bold text-zinc-700 my-40 text-center">
                 Reload the page
               </h2>
             </div>

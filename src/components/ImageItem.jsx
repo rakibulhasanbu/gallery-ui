@@ -73,7 +73,7 @@ const ImageItem = forwardRef(
         >
           <img className="rounded-[10px]" src={id} alt="" />
 
-          {/* <Checkbox
+          <Checkbox
             isSelected={selected}
             name={id}
             id={id}
@@ -81,7 +81,7 @@ const ImageItem = forwardRef(
               selected ? "selectedImg" : ""
             } ${hovered ? "" : "md:hidden"}`}
             onValueChange={handleDeletedImages}
-          ></Checkbox> */}
+          ></Checkbox>
 
           {hovered && (
             <div
@@ -97,69 +97,3 @@ const ImageItem = forwardRef(
 );
 
 export default ImageItem;
-
-// const  = forwardRef(
-//   (
-//     {
-//       id,
-//       index,
-//       deletedImg,
-//       setDeletedImg,
-//       withOpacity,
-//       isDragging,
-//       style,
-//       ...props
-//     },
-//     ref
-//   ) => {
-//     const [isHover, setIsHover] = useState(false);
-
-//     const inlineStyles = {
-//       opacity: withOpacity ? "0.5" : "1",
-//       transformOrigin: "0% 0%",
-//       height: `${index === 0 ? "300px" : "140px"}`,
-//       width: `${index === 0 ? "300px" : "140px"}`,
-//       borderRadius: "12px",
-//       gridColumn: `${index === 0 ? "1 / span 2" : ""}`,
-//       gridRow: `${index === 0 ? "1 / span 2" : ""}`,
-//       cursor: isDragging ? "grabbing" : "grab",
-//       backgroundColor: "#ffffff",
-//       display: "flex",
-//       justifyContent: "center",
-//       touchAction: "none",
-//       alignItems: "center",
-//       boxShadow: isDragging
-//         ? "rgb(63 63 68 / 5%) 0px 2px 0px 2px, rgb(34 33 81 / 15%) 0px 2px 3px 2px"
-//         : "rgb(63 63 68 / 5%) 0px 0px 0px 1px, rgb(34 33 81 / 15%) 0px 1px 3px 0px",
-//       transform: isDragging ? "scale(1.05)" : "scale(1)",
-//       ...style,
-//     };
-
-//     return (
-//       <div
-//         //   onMouseEnter={() => setIsHover(true)}
-//         //   onMouseLeave={() => setIsHover(false)}
-//         className={`relative ${isHover && ""}`}
-//       >
-//         <div
-//           className={`absolute top-0 border-2 border-slate-300 left-0 w-full h-full  text-2xl p-5 rounded-lg ${
-//             isHover
-//               ? "bg-white opacity-40"
-//               : "bg-black opacity-0 hover:opacity-40"
-//           }`}
-//         >
-//           <input
-//             type="checkbox"
-//             className="w-8 h-8 rounded z-50 cursor-pointer border border-red-600 checked:bg-red-600"
-//             onClick={(e) => setIsHover(e.target.checked)}
-//           />
-//         </div>
-//         <img
-//           src="https://res.cloudinary.com/dsb7txoad/image/upload/v1699105076/website%20assets/gellry-ui/gallery_klw4qh.png"
-//           alt=""
-//         />
-//       </div>
-//     );
-//   }
-// );
-// export default ImageItem;
